@@ -18,6 +18,11 @@
 	
 	<body> 
 		<a-scene raycaster-autorefresh>
+
+			<a-assets>
+			<a-asset-item id="wall" src="resources/wall.gltf"></a-asset-item>
+			</a-assets> 
+
 			<a-light type="directional" color="#fff" intensity=".9" position="2 5" rotation="0 0 0"></a-light>
 
 			<a-sky color="rgb(200, 100, 355)"></a-sky>
@@ -28,25 +33,29 @@
 
 
 
-			<a-box position="0 0 -3" rotation="0 0 0" color="#4CC3D9" shadow>
-			</a-box>
+			<a-box position="0 0 -3" rotation="0 0 0" color="#4CC3D9" shadow></a-box>
 
-			<a-sphere position="1 0 -4.5" radius"1" color="#4cc3d9" shadow>
-			</a-sphere>
-				<a-cylinder position="1.75 0 -3" height="1.5" color="#d9cd4c" shadow>
-			</cylinder>
-			<!---backwall-->
+			<a-sphere position="1 0 -4.5" radius"1" color="#4cc3d9" shadow></a-sphere>
+			
+			<a-cylinder position="1.75 0 -3" height="1.5" color="#d9cd4c" shadow></cylinder>
 
-			<a-box position="0 -90 10" rotation"0 0 0" depth="0.5" width="16" height="10" color="coral" shadow>
-			</a-box>
+			<!-- Side walls -->
 
+				<!--right wall-->
+            <a-box position="4 3.5 -4.5" rotation="0 -90 0" depth="0.5" width="16" height="10"color="coral" shadow="1"> </a-box>
+            	<!--left wall-->
+          	<a-box position="-12 3.5 -4.5" rotation="0 -90 0" depth="0.5" width="16" height="10"color="coral" shadow="1"> </a-box>     
+
+            	<!--fronty-->
+            <a-box position="-4 3.5 -120.5" rotation="0 0 0" depth="0.5" width="16" height="10" color="coral" shadow></a-box>
+
+				<!---backwall-->
+			<a-box position="-4 3.5 3.5" rotation="0 0 0" depth="0.5" width="16" height="10" color="coral" shadow></a-box>
+
+			<!-- GLTF Images -->
+			<a-gltf-model scale="16 10 1.7" position="-4 3.5 -12.5" rotation="0 0 0" src="#wall" shadow></a-gltf-model> 
 
 		</a-scene>
 
-
-
-
-
-
-s
+</body>
 </html> 
